@@ -5,10 +5,10 @@ from dotenv import load_dotenv
 import os 
 
 load_dotenv()
-Database_URL = os.getenv("Database_URL")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(
-    Database_URL,
+    DATABASE_URL,
     pool_pre_ping = True
 )
 SessionLocal = sessionmaker(
@@ -16,4 +16,4 @@ SessionLocal = sessionmaker(
     autoflush = False,
     bind = engine 
 )
-base = declarative_base()
+Base = declarative_base()
