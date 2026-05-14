@@ -13,6 +13,7 @@ def register_user(user:RegisterUser):
     existing_user = db.query(User).filter(User.email==user.email).first()
 
     if(existing_user):
+        db.close()
         return {"message":"User Already Exists"}
     
     hash_pwd = hash_password(user.password)
@@ -40,5 +41,5 @@ def login_user(user:LoginUser):
         db.close()
         return {"message":"Incorrect Password"}
     db.close()
-    return{"message":"Login Successfull", "email":existing_user.email}
+    return{"message":"Login Successful", "email":existing_user.email}
         
