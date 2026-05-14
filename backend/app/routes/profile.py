@@ -1,20 +1,20 @@
 from fastapi import APIRouter 
-from app.database import SessionLocal 
-from app.models import CompleteProfile
-from app.schemas import CompleteProfile
+from ..database import SessionLocal 
+from ..models import CompleteProfile
+from ..schemas import CompProfile
 
 router = APIRouter()
 
 @router.post("/completeprofile")
-def complete_profile(profile:CompleteProfile):
+def complete_profile(profile:CompProfile):
     db = SessionLocal()
     
     new_profile = CompleteProfile(
-        user_id = CompleteProfile.user_id,
-        leetcode_username = CompleteProfile.leetcode_username,
-        codeforces_username = CompleteProfile.codeforces_username,
-        hackerrank_username = CompleteProfile.hackerrank_username,
-        github_username = CompleteProfile.github_username
+        user_id = profile.user_id,
+        leetcode_username = profile.leetcode_username,
+        codeforces_username = profile.codeforces_username,
+        hackerrank_username = profile.hackerrank_username,
+        github_username = profile.github_username
     )
 
     db.add(new_profile)
