@@ -9,7 +9,7 @@ class LoginUser(BaseModel):
     email:str
     password:str
 
-class CompleteProfile(BaseModel):
+class CompProfile(BaseModel):
     user_id:int
     leetcode_username:str
     codeforces_username:str 
