@@ -22,3 +22,22 @@ def complete_profile(profile:CompProfile):
     db.close()
 
     return {"message":"Profile Completed Successfully"}
+
+@router.get("/profile/{user_id}")
+def get_profile(user_id : int):
+    
+    db = SessionLocal()
+
+    profile = db.query(CompleteProfile).filter(CompleteProfile.user_id == user_id).first()
+
+    db.close()
+
+    if not profile:
+        return {"message":"Profile not found"}
+
+    return {
+        "leetcode_username" : profile.leetcode_username,
+        "codeforces_username":profile.codeforces_username,
+        "hackerrank_username":profile.hackerrank_username,
+        "github_username":profile.github_username
+    }
