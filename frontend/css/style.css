@@ -1,0 +1,93 @@
+/* Entire webpage styling */
+body {
+
+    /* Font style */
+    font-family: Arial;
+
+
+    /* Background color */
+    background-color: #f5f5f5;
+}
+
+
+/* Main container card */
+.container {
+
+    /* Width */
+    width: 350px;
+
+
+    /* White card */
+    background-color: white;
+
+
+    /* Center container */
+    margin: 100px auto;
+
+
+    /* Internal spacing */
+    padding: 30px;
+
+
+    /* Rounded corners */
+    border-radius: 10px;
+
+
+    /* Shadow effect */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+
+/* Heading alignment */
+h1 {
+
+    text-align: center;
+}
+
+
+/* Input styling */
+input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 10px;
+
+
+    /* Prevent width overflow */
+    box-sizing: border-box;
+}
+
+
+/* Button styling */
+button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 20px;
+
+
+    /* Black button */
+    background-color: black;
+
+
+    /* White text */
+    color: white;
+
+
+    border: none;
+
+
+    /* Hand cursor */
+    cursor: pointer;
+}
+
+
+/* Hover effect */
+button:hover {
+
+    opacity: 0.8;
+}
