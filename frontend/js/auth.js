@@ -110,6 +110,9 @@ async function loginUser() {
 
     // Temporary login success action
     if (data.message === "Login Successful") {
+        
+        // Save the user's user_id for the complete profile page
+        localStorage.setItem("user_id", data.user_id)
 
         alert("Login Working Successfully")
         window.location.href = "complete_profile.html"
