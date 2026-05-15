@@ -112,5 +112,6 @@ async function loginUser() {
     if (data.message === "Login Successful") {
 
         alert("Login Working Successfully")
+        window.location.href = "complete_profile.html"
     }
 }
