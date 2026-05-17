@@ -43,4 +43,3 @@ def login_user(user:LoginUser):
     user_id = existing_user.id
     db.close()
     return{"message":"Login Successful", "email":existing_user.email, "user_id":user_id}
-        
