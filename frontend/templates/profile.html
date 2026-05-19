@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Browser title -->
+    <title>My Profile</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- Main card container -->
+    <div class="container">
+
+        <!-- Heading -->
+        <h1>My Profile</h1>
+
+        <!-- User Information (Read Only) -->
+        <div style="margin-bottom: 20px; padding: 10px; background-color: #f9f9f9; border-radius: 5px;">
+            <p><strong>Name:</strong> <span id="display-name">Loading...</span></p>
+            <p><strong>Roll Number:</strong> <span id="display-roll">Loading...</span></p>
+            <p><strong>Email:</strong> <span id="display-email">Loading...</span></p>
+        </div>
+
+        <!-- Platform Inputs -->
+        <h3>Coding Platforms Handles</h3>
+        
+        <label for="leetcode">LeetCode Username</label>
+        <input type="text" id="leetcode" placeholder="Leetcode Username">
+        
+        <label for="codeforces">Codeforces Username</label>
+        <input type="text" id="codeforces" placeholder="Codeforces Username">
+        
+        <label for="hackerrank">HackerRank Username</label>
+        <input type="text" id="hackerrank" placeholder="Hackerrank Username">
+        
+        <label for="github">GitHub Username</label>
+        <input type="text" id="github" placeholder="GitHub Username">
+
+        <!-- Button calls submitProfile function -->
+        <button onclick="submitProfile()">
+            Update Handles
+        </button>
+
+        <!-- Back to Dashboard -->
+        <p style="text-align: center; margin-top: 15px;">
+            <a href="dashboard.html" style="color: black; text-decoration: underline;">
+                Back to Dashboard
+            </a>
+        </p>
+
+    </div>
+
+    <!-- Connect JavaScript -->
+    <script src="../js/profile.js"></script>
+
+    <!-- Run fetch profile logic on load -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadProfile();
+        });
+    </script>
+
+</body>
+
+</html>
