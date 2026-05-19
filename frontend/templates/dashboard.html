@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Browser Tab Title -->
+    <title>Dashboard</title>
+
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- Main Dashboard Container -->
+    <div class="container">
+
+
+        <!-- Main Header with Navigation -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h1 style="margin: 0;">Codeforces Dashboard</h1>
+            <div>
+                <a href="profile.html" style="padding: 8px 16px; background-color: black; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+                    My Profile
+                </a>
+                <a href="login.html" onclick="localStorage.clear()" style="padding: 8px 16px; background-color: #d9534f; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-left: 10px;">
+                    Logout
+                </a>
+            </div>
+        </div>
+
+
+        <!-- ================================= -->
+        <!-- USER INFO SECTION -->
+        <!-- ================================= -->
+
+        <div class="card">
+
+            <h2>User Information</h2>
+
+            <p>
+                Handle:
+                <span id="handle"></span>
+            </p>
+
+            <p>
+                Rank:
+                <span id="rank"></span>
+            </p>
+
+            <p>
+                Current Rating:
+                <span id="rating"></span>
+            </p>
+
+            <p>
+                Max Rating:
+                <span id="maxrating"></span>
+            </p>
+
+        </div>
+
+
+
+        <!-- ================================= -->
+        <!-- SUBMISSIONS SECTION -->
+        <!-- ================================= -->
+
+        <div class="card">
+
+            <h2>Recent Submissions</h2>
+
+
+            <!-- Submissions List -->
+            <ul id="submissions-list">
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Connect Dashboard JS -->
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>
