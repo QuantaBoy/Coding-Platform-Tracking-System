@@ -10,7 +10,7 @@ router = APIRouter()
 def register_user(user:RegisterUser):
     db = SessionLocal()
 
-    existing_user = db.query(User).filter(User.email==user.email).first()
+    existing_user = db.query(User).filter(User.roll_number==user.roll_number).first()
 
     if(existing_user):
         db.close()
@@ -18,7 +18,7 @@ def register_user(user:RegisterUser):
     
     hash_pwd = hash_password(user.password)
 
-    new_user = User(name=user.name,email=user.email,password = hash_pwd)
+    new_user = User(roll_number=user.roll_number, name=user.name,email=user.email,password = hash_pwd)
 
     db.add(new_user)
     db.commit()
@@ -30,7 +30,7 @@ def register_user(user:RegisterUser):
 def login_user(user:LoginUser):
     db = SessionLocal()
 
-    existing_user = db.query(User).filter(User.email==user.email).first()
+    existing_user = db.query(User).filter(User.roll_number==user.roll_number).first()
 
     if(not existing_user):
         db.close()
@@ -40,6 +40,6 @@ def login_user(user:LoginUser):
     if not valid_pass:
         db.close()
         return {"message":"Incorrect Password"}
-    user_id = existing_user.id
+    
     db.close()
-    return{"message":"Login Successful", "email":existing_user.email, "user_id":user_id}
+    return{"message":"Login Successful", "email":existing_user.email, "roll_number":existing_user.roll_number}

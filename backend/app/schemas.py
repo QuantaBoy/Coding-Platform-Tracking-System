@@ -1,16 +1,17 @@
 from pydantic import BaseModel
 
 class RegisterUser(BaseModel):
+    roll_number:str
     name:str
     email:str
     password:str
 
 class LoginUser(BaseModel):
-    email:str
+    roll_number:str
     password:str
 
 class CompProfile(BaseModel):
-    user_id:int
+    roll_number:str
     leetcode_username:str
     codeforces_username:str 
     hackerrank_username:str

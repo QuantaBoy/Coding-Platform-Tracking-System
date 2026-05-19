@@ -10,7 +10,7 @@ def complete_profile(profile:CompProfile):
     db = SessionLocal()
     
     new_profile = CompleteProfile(
-        user_id = profile.user_id,
+        roll_number = profile.roll_number,
         leetcode_username = profile.leetcode_username,
         codeforces_username = profile.codeforces_username,
         hackerrank_username = profile.hackerrank_username,
@@ -23,12 +23,11 @@ def complete_profile(profile:CompProfile):
 
     return {"message":"Profile Completed Successfully"}
 
-@router.get("/profile/{user_id}")
-def get_profile(user_id : int):
-    
+@router.get("/profile/{roll_number}")
+def get_profile(roll_number : str):
     db = SessionLocal()
 
-    profile = db.query(CompleteProfile).filter(CompleteProfile.user_id == user_id).first()
+    profile = db.query(CompleteProfile).filter(CompleteProfile.roll_number == roll_number).first()
 
     db.close()
 
