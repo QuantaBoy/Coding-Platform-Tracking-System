@@ -6,6 +6,8 @@ async function registerUser() {
     // Get name from input field
     const name = document.getElementById("name").value
 
+    // Get roll number
+    const roll_number = document.getElementById("roll_number").value
 
     // Get email
     const email = document.getElementById("email").value
@@ -36,7 +38,7 @@ async function registerUser() {
 
             // Convert JS object → JSON string
             body: JSON.stringify({
-
+                roll_number,
                 name,
                 email,
                 password
@@ -67,8 +69,8 @@ async function registerUser() {
 // =====================================
 async function loginUser() {
 
-    // Get email value
-    const email = document.getElementById("email").value
+    // Get roll number value
+    const roll_number = document.getElementById("roll_number").value
 
 
     // Get password value
@@ -92,8 +94,7 @@ async function loginUser() {
 
             // Convert object into JSON
             body: JSON.stringify({
-
-                email,
+                roll_number,
                 password
             })
         }
@@ -111,8 +112,8 @@ async function loginUser() {
     // Temporary login success action
     if (data.message === "Login Successful") {
         
-        // Save the user's user_id for the complete profile page
-        localStorage.setItem("user_id", data.user_id)
+        // Save the user's roll_number for the complete profile page
+        localStorage.setItem("roll_number", data.roll_number)
 
         alert("Login Working Successfully")
         window.location.href = "complete_profile.html"

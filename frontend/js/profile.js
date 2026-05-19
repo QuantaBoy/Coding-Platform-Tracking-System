@@ -9,18 +9,15 @@ async function submitProfile() {
     const hackerrank_username = document.getElementById("hackerrank").value;
     const github_username = document.getElementById("github").value;
 
-    // Retrieve the user_id saved during login
-    const user_id_string = localStorage.getItem("user_id");
+    // Retrieve the roll_number saved during login
+    const roll_number = localStorage.getItem("roll_number");
 
-    // If there is no user_id, something went wrong (e.g., they didn't log in properly)
-    if (!user_id_string) {
+    // If there is no roll_number, something went wrong (e.g., they didn't log in properly)
+    if (!roll_number) {
         alert("Please log in first!");
         window.location.href = "login.html";
         return;
     }
-
-    // Convert user_id to an integer because the backend schema expects an int
-    const user_id = parseInt(user_id_string);
 
     // Send request to backend
     const response = await fetch(
@@ -31,7 +28,7 @@ async function submitProfile() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                user_id,
+                roll_number,
                 leetcode_username,
                 codeforces_username,
                 hackerrank_username,
