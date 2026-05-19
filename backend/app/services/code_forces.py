@@ -60,8 +60,14 @@ def get_submission(username:str):
         problem = submission.get("problem",{})
 
         submissions.append({
-            "problem_name" : submission.get("name"),
+            "problem_name" : problem.get("name"),
             "verdict" : submission.get("verdict"),
             "language" : submission.get("programmingLanguage")
         })
     return submissions
+
+# For Testing
+
+# print(get_user_info("Benq"))
+# print(get_rating_history("Benq"))
+# print(get_submission("Benq"))
