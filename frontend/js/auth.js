@@ -1,3 +1,7 @@
+const API_BASE_URL = window.location.origin.includes("127.0.0.1:8000") || window.location.origin.includes("localhost:8000") 
+    ? "" 
+    : "http://127.0.0.1:8000";
+
 // =====================================
 // REGISTER FUNCTION
 // =====================================
@@ -21,7 +25,7 @@ async function registerUser() {
     const response = await fetch(
 
         // FastAPI register endpoint
-        "http://127.0.0.1:8000/register",
+        API_BASE_URL + "/register",
 
         {
 
@@ -80,7 +84,7 @@ async function loginUser() {
     // Send login request
     const response = await fetch(
 
-        "http://127.0.0.1:8000/login",
+        API_BASE_URL + "/login",
 
         {
 
